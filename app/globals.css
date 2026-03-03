@@ -2,26 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 1. Force the root and body to be white, no matter what */
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
+  background-color: #ffffff !important;
+  color: #000000 !important;
 }
 
-body {
-  color: #000000;
-  background: #ffffff;
+html, body {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  margin: 0;
+  padding: 0;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
 }
 
-/* Siddhartha Kumar Style: Hide scrollbar */
+/* 2. Hide scrollbar for the Siddhartha Kumar experience */
 ::-webkit-scrollbar {
   display: none;
 }
 
-/* The Horizontal Wrapper */
-.horizontal-container {
-  display: flex;
-  width: 400%; /* Adjust based on number of projects */
-  height: 100vh;
+/* 3. Horizontal container helper */
+.w-max {
+  width: max-content;
+}
+
+/* 4. Ensure sections don't inherit dark styles */
+section, div {
+  background-color: transparent;
 }
