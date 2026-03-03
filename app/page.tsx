@@ -4,35 +4,45 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default function Home() {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // 1. Register Plugin
     gsap.registerPlugin(ScrollTrigger);
     
-    // Animation for Hero Text
-    gsap.from(".hero-title", {
-      y: 100,
-      opacity: 0,
-      duration: 1.5,
-      ease: "power4.out",
-      delay: 0.5,
-      stagger: 0.2
-    });
-
-    // Animation for all reveal sections
-    const sections = gsap.utils.toArray('.reveal-section');
-    sections.forEach((section: any) => {
-      gsap.from(section, {
+    // 2. Use gsap.context for safe React cleanup
+    let ctx = gsap.context(() => {
+      
+      // Hero Animation
+      gsap.from(".hero-title", {
+        y: 100,
         opacity: 0,
-        y: 50,
-        duration: 1,
-        scrollTrigger: {
-          trigger: section,
-          start: "top 80%",
-          toggleActions: "play none none reverse"
-        }
+        duration: 1.5,
+        ease: "power4.out",
+        delay: 0.5,
+        stagger: 0.2
       });
-    });
+
+      // Section Reveals
+      const sections = gsap.utils.toArray('.reveal-section');
+      sections.forEach((section) => {
+        const element = section as HTMLElement; // Explicitly cast to HTMLElement
+        gsap.from(element, {
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          scrollTrigger: {
+            trigger: element,
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+          }
+        });
+      });
+
+    }, containerRef); // Scope animations to the container
+
+    // 3. Cleanup function (Crucial for Vercel/Next.js)
+    return () => ctx.revert();
   }, []);
 
   return (
