@@ -2,31 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 1. Force the root and body to be white, no matter what */
 :root {
-  background-color: #ffffff !important;
-  color: #000000 !important;
+  --background: #ffffff;
+  --foreground: #000000;
 }
 
-html, body {
-  background-color: #ffffff !important;
+body {
   color: #000000 !important;
-  margin: 0;
-  padding: 0;
+  background-color: #ffffff !important;
   -webkit-font-smoothing: antialiased;
 }
 
-/* 2. Hide scrollbar for the Siddhartha Kumar experience */
+/* Siddhartha Style: Subtle Grain Texture */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Noisy_Texture.png");
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
 
-/* 3. Horizontal container helper */
 .w-max {
   width: max-content;
-}
-
-/* 4. Ensure sections don't inherit dark styles */
-section, div {
-  background-color: transparent;
 }
