@@ -5,93 +5,117 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default function Home() {
   const containerRef = useRef(null);
+  const horizontalRef = useRef(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     
     let ctx = gsap.context(() => {
-      // Reveal titles as you scroll
-      const titles = gsap.utils.toArray('.reveal-text');
-      titles.forEach((title) => {
-        const el = title as HTMLElement;
-        gsap.fromTo(el, 
-          { opacity: 0, y: 80 },
-          { 
-            opacity: 1, 
-            y: 0, 
-            duration: 1.5, 
-            ease: "power4.out",
-            scrollTrigger: {
-              trigger: el,
-              start: "top 90%",
-              toggleActions: "play none none reverse"
-            }
-          }
-        );
+      
+      // 1. HERO ANIMATION
+      gsap.from(".hero-text", {
+        y: 150,
+        skewY: 7,
+        duration: 1.5,
+        stagger: 0.2,
+        ease: "power4.out"
       });
+
+      // 2. HORIZONTAL SCROLL FOR PROJECTS
+      const totalWidth = horizontalRef.current.scrollWidth;
+      gsap.to(horizontalRef.current, {
+        x: () => -(totalWidth - window.innerWidth),
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".projects-trigger",
+          pin: true,
+          scrub: 1,
+          end: () => "+=" + totalWidth,
+          invalidateOnRefresh: true,
+        }
+      });
+
+      // 3. FADE IN ABOUT TEXT
+      gsap.from(".about-text", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".about-text",
+          start: "top 80%",
+        }
+      });
+
     }, containerRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <main ref={containerRef} className="bg-white">
+    <main ref={containerRef} className="bg-white text-black">
       
-      {/* SECTION 1: THE NAME (Massive) */}
-      <section className="h-screen">
-        <h1 className="reveal-text text-[15vw] font-extralight tracking-tighter leading-[0.8] uppercase text-black">
-          Sandesh <br /> Mahajan
-        </h1>
+      {/* SECTION 1: HERO (Siddhartha Style) */}
+      <section className="h-screen flex flex-col items-center justify-center text-center">
+        <div className="overflow-hidden">
+          <h1 className="hero-text text-[12vw] font-bold tracking-tighter leading-[0.8] uppercase">
+            Sandesh <br /> <span className="italic font-serif font-light text-gray-400">Mahajan</span>
+          </h1>
+        </div>
+        <p className="hero-text mt-10 text-xs tracking-[0.5em] uppercase text-gray-400">
+          Systems Builder &bull; Engineering with Intent
+        </p>
       </section>
 
-      {/* SECTION 2: THE ROLE */}
-      <section className="h-screen">
-        <h2 className="reveal-text text-[10vw] font-light tracking-tighter leading-none uppercase text-black text-center">
-          Systems <br /> <span className="text-gray-300 italic font-serif lowercase">builder</span>
+      {/* SECTION 2: THE PHILOSOPHY (Clean White Space) */}
+      <section className="h-screen flex items-center justify-center px-[10%]">
+        <h2 className="about-text text-[5vw] font-light leading-tight tracking-tight max-w-6xl text-center">
+          Building <span className="italic font-serif">robust</span> backends and <br /> 
+          <span className="italic font-serif">seamless</span> digital experiences <br /> 
+          for the next generation of web.
         </h2>
       </section>
 
-      {/* SECTION 3: THE EXPERTISE */}
-      <section className="h-screen flex flex-col items-start px-[10%]">
-        <p className="reveal-text text-xs tracking-[0.5em] text-gray-400 mb-10 uppercase">Expertise</p>
-        <h2 className="reveal-text text-[7vw] font-light tracking-tighter uppercase leading-[1.1] text-black">
-          Python &bull; Flask <br /> React &bull; Next.js <br /> Rest APIs
+      {/* SECTION 3: PROJECTS (The Horizontal Scroll) */}
+      <div className="projects-trigger relative">
+        <div ref={horizontalRef} className="horizontal-container bg-white">
+          
+          {/* Project Title Slide */}
+          <div className="min-w-[100vw] h-screen flex items-center justify-center">
+             <h2 className="text-[15vw] font-bold tracking-tighter uppercase">Works</h2>
+          </div>
+
+          {/* Project 1: HC & Billing */}
+          <div className="min-w-[80vw] h-screen flex flex-col justify-center px-20">
+             <div className="w-full aspect-video bg-gray-100 rounded-sm mb-8"></div>
+             <h3 className="text-5xl font-bold uppercase tracking-tighter">HC & Billing Portal</h3>
+             <p className="text-xl text-gray-500 font-serif italic mt-2">Automation & Analytics</p>
+          </div>
+
+          {/* Project 2: Tech Olympics */}
+          <div className="min-w-[80vw] h-screen flex flex-col justify-center px-20">
+             <div className="w-full aspect-video bg-gray-100 rounded-sm mb-8"></div>
+             <h3 className="text-5xl font-bold uppercase tracking-tighter">Tech Olympics</h3>
+             <p className="text-xl text-gray-500 font-serif italic mt-2">State Level Achievement</p>
+          </div>
+
+          {/* Project 3: Next Venture */}
+          <div className="min-w-[80vw] h-screen flex flex-col justify-center px-20">
+             <div className="w-full aspect-video bg-gray-100 rounded-sm mb-8"></div>
+             <h3 className="text-5xl font-bold uppercase tracking-tighter">Zomato Clone</h3>
+             <p className="text-xl text-gray-500 font-serif italic mt-2">UI Engineering</p>
+          </div>
+
+        </div>
+      </div>
+
+      {/* SECTION 4: CONTACT (Minimal & Large) */}
+      <section className="h-screen flex flex-col items-center justify-center text-center">
+        <h2 className="text-[10vw] font-bold tracking-tighter uppercase leading-none mb-10">
+          Let's <br /> <span className="italic font-serif font-light text-gray-400 lowercase">Talk</span>
         </h2>
-      </section>
-
-      {/* SECTION 4: THE BIG WIN */}
-      <section className="h-screen">
-        <div className="text-center">
-          <p className="reveal-text text-xs tracking-[0.5em] text-gray-400 mb-6 uppercase">Recognition</p>
-          <h2 className="reveal-text text-[9vw] font-light tracking-tighter leading-none uppercase text-black">
-            Tech <br /> Olympics <br /> <span className="text-gray-200">Winner</span>
-          </h2>
-        </div>
-      </section>
-
-      {/* SECTION 5: THE INTERNSHIPS */}
-      <section className="h-screen flex flex-col items-center justify-center px-6">
-        <div className="reveal-text space-y-20 w-full max-w-6xl">
-           <div className="border-t border-black/5 pt-10 flex justify-between items-center">
-              <span className="text-[5vw] uppercase font-light tracking-tighter">Cadmaxx</span>
-              <span className="text-sm tracking-widest text-gray-400 uppercase">2025</span>
-           </div>
-           <div className="border-t border-black/5 pt-10 flex justify-between items-center">
-              <span className="text-[5vw] uppercase font-light tracking-tighter">Dev Town</span>
-              <span className="text-sm tracking-widest text-gray-400 uppercase">2023</span>
-           </div>
-        </div>
-      </section>
-
-      {/* SECTION 6: THE CONTACT (Massive) */}
-      <section className="h-screen flex flex-col">
-        <h2 className="reveal-text text-[12vw] font-light tracking-tighter uppercase text-black">
-          Connect
-        </h2>
-        <div className="reveal-text flex gap-12 mt-10">
-           <a href="mailto:sandeshmahajan422@gmail.com" className="text-lg tracking-[0.3em] uppercase border-b border-black pb-1 hover:text-gray-400 transition-colors">Email</a>
-           <a href="https://github.com/SandeshMahajan07" target="_blank" className="text-lg tracking-[0.3em] uppercase border-b border-black pb-1 hover:text-gray-400 transition-colors">GitHub</a>
-        </div>
+        <a href="mailto:sandeshmahajan422@gmail.com" className="text-xl tracking-widest uppercase border-b border-black pb-2 hover:opacity-50 transition-all">
+          Email Me
+        </a>
       </section>
 
     </main>
