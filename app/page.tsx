@@ -678,12 +678,12 @@ export default function Home() {
           <div ref={horizontalRef} className="flex h-screen w-max">
 
             {/* Title panel */}
-            <div className="flex items-center gap-4">
-  <Label>Selected Works</Label>
-  <span className="text-gray-200" style={{ fontFamily: 'DM Mono, monospace' }}>—</span>
-  <Label>05 / 07</Label>
-</div>
-
+            <div className="w-[45vw] h-screen flex flex-col justify-between px-[8%] py-16 flex-shrink-0 border-r border-gray-100 relative overflow-hidden">
+              <div className="flex items-center gap-4">
+                <Label>Selected Works</Label>
+                <span className="text-gray-200" style={{ fontFamily: 'DM Mono, monospace' }}>—</span>
+                <Label>05 / 07</Label>
+              </div>
               {/* Screen illustration in title panel */}
               <IllustrationScreen className="ill-float absolute bottom-20 right-8 w-44 h-28 text-gray-200 opacity-60 pointer-events-none" />
               <div>
