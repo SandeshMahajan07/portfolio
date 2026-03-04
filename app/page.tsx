@@ -60,10 +60,10 @@ const EXPERIENCE = [
 ];
 
 const CERTS = [
-  ['Full Stack Web Development',           'Dev Town'],
-  ['HTML and CSS',                         'Certiport'],
-  ['Python & Artificial Intelligence',    'Dev Town'],
-  ['Backend Web Dev — Node.js & Express',  'AWS'],
+  ['Full Stack Web Development', 'Dev Town'],
+  ['HTML and CSS', 'Certiport'],
+  ['Python & Artificial Intelligence', 'Dev Town'],
+  ['Backend Web Dev — Node.js & Express', 'AWS'],
 ];
 
 /* ─── LABEL ──────────────────────────────────────────────── */
@@ -78,39 +78,119 @@ function Label({ children, className = '' }: { children: React.ReactNode; classN
   );
 }
 
-/* ─── BLOB ILLUSTRATIONS ─────────────────────────────────── */
-function Blob1({ className = '' }: { className?: string }) {
+/* ─── LINE ART ILLUSTRATIONS ─────────────────────────────── */
+
+// Hero — terminal / code window
+function IllustrationCode({ className = '' }: { className?: string }) {
   return (
-    <svg viewBox="0 0 200 200" className={className} aria-hidden>
-      <path
-        fill="currentColor"
-        d="M44.7,-67.3C56.3,-58.4,62.7,-42.6,67.2,-26.8C71.7,-11,74.3,4.8,70.2,18.7C66.1,32.6,55.3,44.5,42.4,53.6C29.5,62.7,14.7,68.9,-0.8,69.9C-16.3,70.9,-32.6,66.7,-44.6,57.4C-56.6,48.1,-64.4,33.7,-68.1,18.1C-71.8,2.5,-71.5,-14.3,-64.9,-27.9C-58.3,-41.5,-45.5,-51.9,-32,-59.3C-18.4,-66.7,-4.1,-71.2,10.3,-69.6C24.7,-68,33.1,-76.2,44.7,-67.3Z"
-        transform="translate(100 100)"
-      />
+    <svg viewBox="0 0 280 200" fill="none" className={className} aria-hidden>
+      <rect x="10" y="10" width="260" height="180" rx="8" stroke="currentColor" strokeWidth="1" />
+      <line x1="10" y1="36" x2="270" y2="36" stroke="currentColor" strokeWidth="1" />
+      <circle cx="28" cy="23" r="4" stroke="currentColor" strokeWidth="1" />
+      <circle cx="44" cy="23" r="4" stroke="currentColor" strokeWidth="1" />
+      <circle cx="60" cy="23" r="4" stroke="currentColor" strokeWidth="1" />
+      <line x1="28" y1="58"  x2="80"  y2="58"  stroke="currentColor" strokeWidth="1"   strokeLinecap="round" />
+      <line x1="28" y1="74"  x2="140" y2="74"  stroke="currentColor" strokeWidth="1"   strokeLinecap="round" />
+      <line x1="44" y1="90"  x2="110" y2="90"  stroke="currentColor" strokeWidth="1"   strokeLinecap="round" />
+      <line x1="44" y1="106" x2="160" y2="106" stroke="currentColor" strokeWidth="1"   strokeLinecap="round" />
+      <line x1="44" y1="122" x2="130" y2="122" stroke="currentColor" strokeWidth="1"   strokeLinecap="round" />
+      <line x1="28" y1="138" x2="90"  y2="138" stroke="currentColor" strokeWidth="1"   strokeLinecap="round" />
+      <line x1="28" y1="154" x2="70"  y2="154" stroke="currentColor" strokeWidth="1"   strokeLinecap="round" />
+      <rect x="28" y="164" width="10" height="2" fill="currentColor" opacity="0.4" />
+      <path d="M200 60 L186 100 L200 140" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M220 60 L234 100 L220 140" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
 
-function Blob2({ className = '' }: { className?: string }) {
+// Skills — network / nodes
+function IllustrationNetwork({ className = '' }: { className?: string }) {
   return (
-    <svg viewBox="0 0 200 200" className={className} aria-hidden>
-      <path
-        fill="currentColor"
-        d="M39.5,-65.3C50.3,-56.1,57.5,-43.2,63.8,-29.5C70.1,-15.8,75.5,-1.3,73.2,12C70.9,25.3,60.8,37.4,49.1,47.1C37.4,56.8,24.1,64.2,9.2,68.2C-5.7,72.3,-22.2,73.1,-35.2,66.4C-48.2,59.8,-57.7,45.6,-63.8,30.4C-69.9,15.2,-72.7,-1,-68.7,-15.3C-64.7,-29.6,-54,-42,-41.8,-51.2C-29.7,-60.4,-16.2,-66.4,-0.9,-65.1C14.5,-63.9,28.7,-74.5,39.5,-65.3Z"
-        transform="translate(100 100)"
-      />
+    <svg viewBox="0 0 240 240" fill="none" className={className} aria-hidden>
+      <circle cx="120" cy="60"  r="8" stroke="currentColor" strokeWidth="1" />
+      <circle cx="60"  cy="140" r="8" stroke="currentColor" strokeWidth="1" />
+      <circle cx="180" cy="140" r="8" stroke="currentColor" strokeWidth="1" />
+      <circle cx="120" cy="200" r="8" stroke="currentColor" strokeWidth="1" />
+      <circle cx="40"  cy="60"  r="4" stroke="currentColor" strokeWidth="1" />
+      <circle cx="200" cy="60"  r="4" stroke="currentColor" strokeWidth="1" />
+      <circle cx="30"  cy="190" r="4" stroke="currentColor" strokeWidth="1" />
+      <circle cx="210" cy="190" r="4" stroke="currentColor" strokeWidth="1" />
+      <line x1="120" y1="60"  x2="60"  y2="140" stroke="currentColor" strokeWidth="0.8" />
+      <line x1="120" y1="60"  x2="180" y2="140" stroke="currentColor" strokeWidth="0.8" />
+      <line x1="60"  y1="140" x2="120" y2="200" stroke="currentColor" strokeWidth="0.8" />
+      <line x1="180" y1="140" x2="120" y2="200" stroke="currentColor" strokeWidth="0.8" />
+      <line x1="60"  y1="140" x2="180" y2="140" stroke="currentColor" strokeWidth="0.8" />
+      <line x1="40"  y1="60"  x2="120" y2="60"  stroke="currentColor" strokeWidth="0.8" />
+      <line x1="200" y1="60"  x2="120" y2="60"  stroke="currentColor" strokeWidth="0.8" />
+      <line x1="30"  y1="190" x2="60"  y2="140" stroke="currentColor" strokeWidth="0.8" />
+      <line x1="210" y1="190" x2="180" y2="140" stroke="currentColor" strokeWidth="0.8" />
+      <circle cx="120" cy="120" r="70" stroke="currentColor" strokeWidth="0.5" strokeDasharray="4 6" />
     </svg>
   );
 }
 
-function Blob3({ className = '' }: { className?: string }) {
+// Experience — timeline / path
+function IllustrationPath({ className = '' }: { className?: string }) {
   return (
-    <svg viewBox="0 0 200 200" className={className} aria-hidden>
-      <path
-        fill="currentColor"
-        d="M47.3,-71.2C59.4,-62.1,66,-46.2,70.8,-30C75.7,-13.8,78.8,2.7,74.3,17.1C69.8,31.5,57.6,43.8,44.3,53.9C31,64,16.5,71.9,0.2,71.6C-16.1,71.3,-32.2,62.8,-44.6,51.5C-57,40.2,-65.7,26.1,-68.8,10.7C-71.9,-4.7,-69.4,-21.4,-61.5,-34.5C-53.6,-47.6,-40.3,-57.1,-26.7,-65.4C-13.1,-73.7,0.8,-80.8,14.2,-79C27.6,-77.2,35.2,-80.3,47.3,-71.2Z"
-        transform="translate(100 100)"
-      />
+    <svg viewBox="0 0 160 320" fill="none" className={className} aria-hidden>
+      <line x1="80" y1="20" x2="80" y2="300" stroke="currentColor" strokeWidth="0.8" strokeDasharray="6 5" />
+      <circle cx="80" cy="60"  r="10" stroke="currentColor" strokeWidth="1" />
+      <circle cx="80" cy="60"  r="4"  fill="currentColor" />
+      <circle cx="80" cy="160" r="10" stroke="currentColor" strokeWidth="1" />
+      <circle cx="80" cy="160" r="4"  fill="currentColor" />
+      <circle cx="80" cy="260" r="10" stroke="currentColor" strokeWidth="1" />
+      <circle cx="80" cy="260" r="4"  fill="currentColor" opacity="0.3" />
+      <line x1="30"  y1="60"  x2="70"  y2="60"  stroke="currentColor" strokeWidth="1"   strokeLinecap="round" />
+      <line x1="90"  y1="60"  x2="140" y2="60"  stroke="currentColor" strokeWidth="1"   strokeLinecap="round" />
+      <line x1="20"  y1="72"  x2="70"  y2="72"  stroke="currentColor" strokeWidth="0.6" strokeLinecap="round" />
+      <line x1="90"  y1="72"  x2="130" y2="72"  stroke="currentColor" strokeWidth="0.6" strokeLinecap="round" />
+      <line x1="30"  y1="160" x2="70"  y2="160" stroke="currentColor" strokeWidth="1"   strokeLinecap="round" />
+      <line x1="90"  y1="160" x2="140" y2="160" stroke="currentColor" strokeWidth="1"   strokeLinecap="round" />
+      <line x1="20"  y1="172" x2="70"  y2="172" stroke="currentColor" strokeWidth="0.6" strokeLinecap="round" />
+      <line x1="90"  y1="172" x2="120" y2="172" stroke="currentColor" strokeWidth="0.6" strokeLinecap="round" />
+      <path d="M74 294 L80 306 L86 294" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+// Connect — envelope / signal waves
+function IllustrationConnect({ className = '' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 280 180" fill="none" className={className} aria-hidden>
+      <rect x="40" y="50" width="200" height="120" rx="4" stroke="currentColor" strokeWidth="1" />
+      <path d="M40 54 L140 118 L240 54" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+      <line x1="40"  y1="170" x2="100" y2="126" stroke="currentColor" strokeWidth="0.8" />
+      <line x1="240" y1="170" x2="180" y2="126" stroke="currentColor" strokeWidth="0.8" />
+      <path d="M180 28 Q210 16 230 34" stroke="currentColor" strokeWidth="1"   strokeLinecap="round" fill="none" />
+      <path d="M176 16 Q214 0  238 26"  stroke="currentColor" strokeWidth="0.7" strokeLinecap="round" fill="none" opacity="0.5" />
+      <path d="M172 6  Q218 -12 244 20" stroke="currentColor" strokeWidth="0.5" strokeLinecap="round" fill="none" opacity="0.3" />
+      <circle cx="174" cy="34" r="3" fill="currentColor" />
+    </svg>
+  );
+}
+
+// Projects — browser / screen frame
+function IllustrationScreen({ className = '' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 300 200" fill="none" className={className} aria-hidden>
+      <rect x="10" y="10" width="280" height="160" rx="6" stroke="currentColor" strokeWidth="1" />
+      <line x1="10" y1="34" x2="290" y2="34" stroke="currentColor" strokeWidth="1" />
+      <circle cx="26" cy="22" r="3.5" stroke="currentColor" strokeWidth="1" />
+      <circle cx="39" cy="22" r="3.5" stroke="currentColor" strokeWidth="1" />
+      <circle cx="52" cy="22" r="3.5" stroke="currentColor" strokeWidth="1" />
+      <rect x="70" y="15" width="160" height="14" rx="3" stroke="currentColor" strokeWidth="0.7" />
+      <rect x="26" y="50" width="110" height="70" rx="2" stroke="currentColor" strokeWidth="0.8" />
+      <line x1="26"  y1="134" x2="136" y2="134" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round" />
+      <line x1="26"  y1="144" x2="100" y2="144" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round" />
+      <line x1="26"  y1="154" x2="115" y2="154" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round" />
+      <rect x="158" y="50" width="120" height="44" rx="2" stroke="currentColor" strokeWidth="0.8" />
+      <line x1="158" y1="106" x2="278" y2="106" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round" />
+      <line x1="158" y1="116" x2="240" y2="116" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round" />
+      <line x1="158" y1="126" x2="260" y2="126" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round" />
+      <line x1="158" y1="136" x2="220" y2="136" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round" />
+      <line x1="140" y1="170" x2="160" y2="190" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+      <line x1="160" y1="170" x2="140" y2="190" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+      <line x1="120" y1="190" x2="180" y2="190" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
     </svg>
   );
 }
@@ -119,7 +199,6 @@ function Blob3({ className = '' }: { className?: string }) {
 export default function Home() {
   const containerRef  = useRef<HTMLDivElement>(null);
   const horizontalRef = useRef<HTMLDivElement>(null);
-  const imgMaskRef    = useRef<HTMLDivElement>(null);
   const progressRef   = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -127,49 +206,64 @@ export default function Home() {
 
     const ctx = gsap.context(() => {
 
-      /* ── Scroll progress ── */
+      /* Scroll progress bar */
       if (progressRef.current) {
         gsap.to(progressRef.current, {
-          scaleX: 1, ease: 'none',
-          scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom bottom', scrub: 0 },
+          scaleX: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: 'body',
+            start: 'top top',
+            end: 'bottom bottom',
+            scrub: 0,
+          },
         });
       }
 
-      /* ── Hero ── */
-      gsap.from('.hero-line', { y: 140, duration: 1.6, stagger: 0.15, ease: 'power4.out', delay: 0.1 });
-      gsap.from('.hero-sub',  { opacity: 0, y: 24, duration: 1.2, delay: 0.8, ease: 'power3.out' });
-      gsap.from('.hero-scroll-indicator', { opacity: 0, duration: 1, delay: 1.4 });
-
-      /* ── Floating blobs ── */
-      gsap.utils.toArray<HTMLElement>('.blob-float').forEach((el, i) => {
-        gsap.to(el, {
-          y: i % 2 === 0 ? -28 : 22,
-          x: i % 3 === 0 ? 14 : -10,
-          rotation: i % 2 === 0 ? 18 : -14,
-          duration: 5 + i * 0.8,
-          repeat: -1,
-          yoyo: true,
-          ease: 'sine.inOut',
-          delay: i * 0.6,
-        });
+      /* Hero text */
+      gsap.from('.hero-line', {
+        y: 140,
+        duration: 1.6,
+        stagger: 0.15,
+        ease: 'power4.out',
+        delay: 0.1,
+      });
+      gsap.from('.hero-sub', {
+        opacity: 0,
+        y: 24,
+        duration: 1.2,
+        delay: 0.8,
+        ease: 'power3.out',
+      });
+      gsap.from('.hero-scroll-indicator', {
+        opacity: 0,
+        duration: 1,
+        delay: 1.4,
       });
 
-      /* ── Photo parallax ── */
+      /* Photo parallax */
       gsap.to('.me-image', {
-        y: -80, ease: 'none',
-        scrollTrigger: { trigger: '.me-container', start: 'top bottom', end: 'bottom top', scrub: true },
+        y: -80,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.me-container',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+        },
       });
 
-      /* ── Horizontal scroll — desktop only ── */
-      const mq = window.matchMedia('(min-width: 768px)');
-      if (mq.matches && horizontalRef.current) {
+      /* Horizontal scroll — desktop only */
+      const isMd = window.matchMedia('(min-width: 768px)').matches;
+      if (isMd && horizontalRef.current) {
         const totalWidth = horizontalRef.current.scrollWidth;
         gsap.to(horizontalRef.current, {
           x: () => -(totalWidth - window.innerWidth),
           ease: 'none',
           scrollTrigger: {
             trigger: '.projects-trigger',
-            pin: true, scrub: 1,
+            pin: true,
+            scrub: 1,
             start: 'top top',
             end: () => '+=' + totalWidth,
             invalidateOnRefresh: true,
@@ -177,64 +271,58 @@ export default function Home() {
         });
       }
 
-      /* ── Reveal ── */
+      /* Reveal up */
       gsap.utils.toArray<HTMLElement>('.reveal-up').forEach((el) => {
         gsap.from(el, {
-          y: 48, opacity: 0, duration: 1.1, ease: 'power3.out',
-          scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none reverse' },
+          y: 48,
+          opacity: 0,
+          duration: 1.1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 88%',
+            toggleActions: 'play none none reverse',
+          },
         });
       });
 
-      /* ── Line expand ── */
+      /* Line expand */
       gsap.utils.toArray<HTMLElement>('.line-expand').forEach((el) => {
         gsap.from(el, {
-          scaleX: 0, transformOrigin: 'left', duration: 1.4, ease: 'power3.inOut',
+          scaleX: 0,
+          transformOrigin: 'left',
+          duration: 1.4,
+          ease: 'power3.inOut',
           scrollTrigger: { trigger: el, start: 'top 90%' },
         });
       });
 
     }, containerRef);
 
-    /* ── Cursor follow image ── */
-    const mask = imgMaskRef.current;
-    const hero = document.querySelector('.hero-section') as HTMLElement | null;
-    let cleanupHero = () => {};
-
-    if (mask && hero) {
-      let mx = 0, my = 0, cx = 0, cy = 0, raf: number;
-      const onMove = (e: MouseEvent) => { mx = e.clientX; my = e.clientY; };
-      const lerp   = () => { cx += (mx-cx)*0.07; cy += (my-cy)*0.07; mask.style.left=cx+'px'; mask.style.top=cy+'px'; raf=requestAnimationFrame(lerp); };
-      const show   = () => { mask.style.opacity='1'; raf=requestAnimationFrame(lerp); };
-      const hide   = () => { mask.style.opacity='0'; cancelAnimationFrame(raf); };
-      hero.addEventListener('mousemove', onMove);
-      hero.addEventListener('mouseenter', show);
-      hero.addEventListener('mouseleave', hide);
-      cleanupHero = () => { hero.removeEventListener('mousemove',onMove); hero.removeEventListener('mouseenter',show); hero.removeEventListener('mouseleave',hide); cancelAnimationFrame(raf); };
-    }
-
-    return () => { ctx.revert(); cleanupHero(); };
+    return () => ctx.revert();
   }, []);
 
   return (
     <main ref={containerRef} className="bg-white text-black overflow-x-hidden">
 
-      {/* Progress bar */}
+      {/* Scroll progress bar */}
       <div className="fixed top-0 left-0 right-0 h-[1px] z-[600] bg-gray-100">
         <div ref={progressRef} className="h-full bg-black origin-left scale-x-0" />
-      </div>
-
-      {/* Cursor follow image */}
-      <div ref={imgMaskRef} className="hero-image-mask hidden md:block">
-        <Image src="/me.png" alt="Sandesh Mahajan" fill className="object-cover" priority />
       </div>
 
       {/* Nav */}
       <nav className="fixed top-0 left-0 right-0 z-[500] mix-blend-difference">
         <div className="flex items-center justify-between px-6 md:px-12 py-5">
-          <span className="text-[10px] tracking-[0.4em] uppercase text-white" style={{ fontFamily: 'DM Mono, monospace' }}>
+          <span
+            className="text-[10px] tracking-[0.4em] uppercase text-white"
+            style={{ fontFamily: 'DM Mono, monospace' }}
+          >
             Sandesh Mahajan
           </span>
-          <div className="flex gap-6 md:gap-8 text-[10px] tracking-[0.4em] uppercase text-white" style={{ fontFamily: 'DM Mono, monospace' }}>
+          <div
+            className="flex gap-6 md:gap-8 text-[10px] tracking-[0.4em] uppercase text-white"
+            style={{ fontFamily: 'DM Mono, monospace' }}
+          >
             <a href="#about"   className="hover:opacity-50 transition-opacity">About</a>
             <a href="#works"   className="hover:opacity-50 transition-opacity">Works</a>
             <a href="#contact" className="hover:opacity-50 transition-opacity">Contact</a>
@@ -247,12 +335,16 @@ export default function Home() {
       ══════════════════════════════════════ */}
       <section className="hero-section h-screen flex flex-col items-center justify-center text-center px-6 relative overflow-hidden select-none">
 
-        {/* ── Blob illustrations ── */}
-        <Blob1 className="blob-float absolute -top-16 -left-16 w-72 h-72 text-gray-50 opacity-80 pointer-events-none" />
-        <Blob2 className="blob-float absolute -bottom-20 -right-10 w-80 h-80 text-gray-50 opacity-60 pointer-events-none" />
-        <Blob3 className="blob-float absolute top-1/3 right-[8%] w-32 h-32 text-gray-100 opacity-70 pointer-events-none hidden md:block" />
+        {/* Line art illustration — bottom right */}
+        <IllustrationCode className="ill-float-slow absolute bottom-16 right-[5%] w-44 h-32 text-gray-200 opacity-80 pointer-events-none hidden md:block" />
 
-        {/* Side labels — desktop only */}
+        {/* Accent vertical lines */}
+        <div className="absolute inset-0 pointer-events-none hidden md:block">
+          <div className="absolute top-[12%] left-[6%] w-px h-[28vh] bg-gray-100" />
+          <div className="absolute top-[12%] right-[6%] w-px h-[28vh] bg-gray-100" />
+        </div>
+
+        {/* Side labels */}
         <div className="absolute top-1/2 right-8 -translate-y-1/2 rotate-90 origin-center hidden md:block">
           <Label>Portfolio — 2025</Label>
         </div>
@@ -260,13 +352,7 @@ export default function Home() {
           <Label>CSE · PDA College</Label>
         </div>
 
-        {/* Vertical accent lines */}
-        <div className="absolute inset-0 pointer-events-none hidden md:block">
-          <div className="absolute top-[12%] left-[6%] w-px h-[28vh] bg-gray-100" />
-          <div className="absolute top-[12%] right-[6%] w-px h-[28vh] bg-gray-100" />
-        </div>
-
-        {/* Hero type */}
+        {/* Headline */}
         <div className="overflow-hidden mb-[-0.08em]">
           <h1
             className="hero-line text-[clamp(4.5rem,15vw,14rem)] font-black tracking-[-0.04em] leading-[0.88] uppercase"
@@ -277,14 +363,17 @@ export default function Home() {
         </div>
         <div className="overflow-hidden">
           <h1
-            className="hero-line text-[clamp(4.5rem,15vw,14rem)] tracking-[-0.04em] leading-[0.88] uppercase italic text-gray-100"
+            className="hero-line text-[clamp(4.5rem,15vw,14rem)] tracking-[-0.04em] leading-[0.88] uppercase italic text-gray-300"
             style={{ fontFamily: 'Playfair Display, serif', fontWeight: 400 }}
           >
             Mahajan
           </h1>
         </div>
 
-        <p className="hero-sub mt-8 text-[9px] tracking-[0.55em] uppercase text-gray-500" style={{ fontFamily: 'DM Mono, monospace' }}>
+        <p
+          className="hero-sub mt-8 text-[9px] tracking-[0.55em] uppercase text-gray-500"
+          style={{ fontFamily: 'DM Mono, monospace' }}
+        >
           Systems Builder &bull; Engineering with Intent
         </p>
 
@@ -300,14 +389,10 @@ export default function Home() {
       ══════════════════════════════════════ */}
       <section id="about" className="relative border-t border-gray-100 overflow-hidden">
 
-        {/* Blob */}
-        <Blob2 className="blob-float absolute top-20 -right-24 w-96 h-96 text-gray-50 opacity-50 pointer-events-none" />
-
         <div className="absolute top-8 right-6 md:right-12 hidden md:block">
-          <Label className="section-num">02 / 07</Label>
+          <Label>02 / 07</Label>
         </div>
 
-        {/* MOBILE: stack vertically. DESKTOP: side by side */}
         <div className="flex flex-col md:flex-row min-h-screen">
 
           {/* Text side */}
@@ -316,13 +401,13 @@ export default function Home() {
               <Label className="reveal-up block mb-10 md:mb-16">Introduction</Label>
 
               <h2
-                className="reveal-up text-[clamp(1.8rem,4vw,3.5rem)] font-light leading-[1.15] tracking-tight text-black mb-8"
+                className="reveal-up text-[clamp(1.8rem,4vw,3.5rem)] font-light leading-[1.15] tracking-tight mb-8"
                 style={{ fontFamily: 'DM Sans, sans-serif' }}
               >
                 I build{' '}
                 <em style={{ fontFamily: 'Playfair Display, serif' }}>intelligent</em>{' '}
                 systems<br className="hidden md:block" /> and{' '}
-                <em className="text-gray-300" style={{ fontFamily: 'Playfair Display, serif' }}>scalable</em>{' '}
+                <em className="text-gray-400" style={{ fontFamily: 'Playfair Display, serif' }}>scalable</em>{' '}
                 architectures.
               </h2>
 
@@ -336,56 +421,40 @@ export default function Home() {
 
               <div className="line-expand h-px bg-gray-100 w-full mb-10" />
 
-              {/* Stats */}
               <div className="reveal-up grid grid-cols-3 gap-0 mb-10">
-                {[['8.6','CGPA'],['2+','Internships'],['1st','State Prize']].map(([n,l],i)=>(
-                  <div key={l} className={`py-5 ${i!==0?'pl-6 border-l border-gray-100':''}`}>
-                    <p className="text-2xl md:text-3xl font-black tracking-tight mb-1" style={{ fontFamily: 'DM Sans, sans-serif' }}>{n}</p>
+                {[['8.6', 'CGPA'], ['2+', 'Internships'], ['1st', 'State Prize']].map(([n, l], i) => (
+                  <div key={l} className={`py-5 ${i !== 0 ? 'pl-6 border-l border-gray-100' : ''}`}>
+                    <p
+                      className="text-2xl md:text-3xl font-black tracking-tight mb-1"
+                      style={{ fontFamily: 'DM Sans, sans-serif' }}
+                    >
+                      {n}
+                    </p>
                     <Label>{l}</Label>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Meta */}
             <div className="reveal-up grid grid-cols-2 gap-6 pt-8 border-t border-gray-100">
               <div>
                 <Label className="block mb-2">Core Stack</Label>
-                <p className="text-xs font-bold uppercase tracking-widest" style={{ fontFamily: 'DM Mono, monospace' }}>Python / Next.js / SQL</p>
+                <p className="text-xs font-bold uppercase tracking-widest" style={{ fontFamily: 'DM Mono, monospace' }}>
+                  Python / Next.js / SQL
+                </p>
               </div>
               <div>
                 <Label className="block mb-2">Education</Label>
-                <p className="text-xs font-bold uppercase tracking-widest" style={{ fontFamily: 'DM Mono, monospace' }}>B.E CSE · PDA College</p>
+                <p className="text-xs font-bold uppercase tracking-widest" style={{ fontFamily: 'DM Mono, monospace' }}>
+                  B.E CSE · PDA College
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Photo side */}
-          {/* MOBILE: fixed height card. DESKTOP: full bleed */}
-          <div className="order-1 md:order-2 w-full md:w-1/2">
-            {/* Mobile photo card */}
-            <div className="md:hidden mx-6 mt-20 mb-0 relative">
-              <div className="me-container aspect-[4/5] relative overflow-hidden bg-gray-50 rounded-sm shadow-xl">
-                <div className="me-image absolute inset-0 w-full h-[115%] -top-[7.5%]">
-                  <Image
-                    src="/me.png"
-                    alt="Sandesh Mahajan"
-                    fill
-                    className="object-cover grayscale hover:grayscale-0 transition-all duration-[1.5s]"
-                    priority
-                  />
-                </div>
-                <div className="absolute bottom-4 left-4 right-4 flex justify-between z-10">
-                  <Label className="text-white/70">Kalaburagi, IN</Label>
-                  <Label className="text-white/70">© 2025</Label>
-                </div>
-              </div>
-              {/* Decorative blob behind card on mobile */}
-              <Blob1 className="blob-float absolute -bottom-10 -right-10 w-48 h-48 text-gray-100 opacity-60 pointer-events-none -z-10" />
-            </div>
-
-            {/* Desktop full-bleed photo */}
-            <div className="me-container hidden md:block h-full min-h-screen relative overflow-hidden bg-gray-50">
+          {/* Photo — mobile */}
+          <div className="md:hidden order-1 mx-6 mt-20 relative">
+            <div className="me-container aspect-[4/5] relative overflow-hidden bg-gray-50 rounded-sm shadow-xl">
               <div className="me-image absolute inset-0 w-full h-[115%] -top-[7.5%]">
                 <Image
                   src="/me.png"
@@ -395,11 +464,28 @@ export default function Home() {
                   priority
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent pointer-events-none" />
-              <div className="absolute bottom-8 left-8 right-8 flex justify-between z-10">
-                <Label className="text-white/60">Kalaburagi, IN</Label>
-                <Label className="text-white/60">© 2025</Label>
+              <div className="absolute bottom-4 left-4 right-4 flex justify-between z-10">
+                <Label className="text-white/70">Kalaburagi, IN</Label>
+                <Label className="text-white/70">© 2025</Label>
               </div>
+            </div>
+          </div>
+
+          {/* Photo — desktop */}
+          <div className="me-container hidden md:block md:w-1/2 min-h-screen relative overflow-hidden bg-gray-50 order-2">
+            <div className="me-image absolute inset-0 w-full h-[115%] -top-[7.5%]">
+              <Image
+                src="/me.png"
+                alt="Sandesh Mahajan"
+                fill
+                className="object-cover grayscale hover:grayscale-0 transition-all duration-[1.5s]"
+                priority
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent pointer-events-none" />
+            <div className="absolute bottom-8 left-8 right-8 flex justify-between z-10">
+              <Label className="text-white/60">Kalaburagi, IN</Label>
+              <Label className="text-white/60">© 2025</Label>
             </div>
           </div>
         </div>
@@ -410,11 +496,11 @@ export default function Home() {
       ══════════════════════════════════════ */}
       <section className="relative py-24 md:py-32 px-6 md:px-[8%] border-t border-gray-100 overflow-hidden">
 
-        {/* Blob */}
-        <Blob3 className="blob-float absolute -bottom-20 -left-16 w-72 h-72 text-gray-50 opacity-60 pointer-events-none" />
+        {/* Network illustration — top right */}
+        <IllustrationNetwork className="ill-float absolute top-6 right-6 w-36 h-36 text-gray-200 opacity-70 pointer-events-none hidden md:block" />
 
         <div className="absolute top-8 right-6 md:right-12 hidden md:block">
-          <Label className="section-num">03 / 07</Label>
+          <Label>03 / 07</Label>
         </div>
 
         <div className="flex flex-col md:flex-row gap-12 md:gap-24 max-w-5xl">
@@ -427,8 +513,7 @@ export default function Home() {
               What I<br />work with
             </h2>
           </div>
-
-          <div className="flex-1 grid grid-cols-1 gap-0">
+          <div className="flex-1">
             {SKILLS.map((s, i) => (
               <div
                 key={i}
@@ -452,11 +537,11 @@ export default function Home() {
       ══════════════════════════════════════ */}
       <section className="relative py-24 md:py-32 px-6 md:px-[8%] border-t border-gray-100 bg-[#f9f9f9] overflow-hidden">
 
-        {/* Blob */}
-        <Blob1 className="blob-float absolute -top-16 right-0 w-80 h-80 text-gray-100 opacity-40 pointer-events-none" />
+        {/* Timeline illustration — right center */}
+        <IllustrationPath className="ill-float-slow absolute right-[4%] top-1/2 -translate-y-1/2 w-20 h-44 text-gray-300 opacity-60 pointer-events-none hidden md:block" />
 
         <div className="absolute top-8 right-6 md:right-12 hidden md:block">
-          <Label className="section-num">04 / 07</Label>
+          <Label>04 / 07</Label>
         </div>
 
         <div className="flex flex-col md:flex-row gap-12 md:gap-24 max-w-5xl">
@@ -469,7 +554,6 @@ export default function Home() {
               Where I've<br />worked
             </h2>
           </div>
-
           <div className="flex-1">
             {EXPERIENCE.map((e, i) => (
               <div
@@ -487,10 +571,13 @@ export default function Home() {
                 </div>
                 <div className="flex flex-wrap gap-3 mb-4">
                   <Label>{e.company}</Label>
-                  <span className="text-gray-200" style={{ fontFamily: 'DM Mono, monospace' }}>·</span>
+                  <span className="text-gray-300" style={{ fontFamily: 'DM Mono, monospace' }}>·</span>
                   <Label>{e.location}</Label>
                 </div>
-                <p className="text-sm text-gray-600 leading-[1.85] max-w-xl" style={{ fontFamily: 'DM Sans, sans-serif' }}>
+                <p
+                  className="text-sm text-gray-600 leading-[1.85] max-w-xl"
+                  style={{ fontFamily: 'DM Sans, sans-serif' }}
+                >
                   {e.desc}
                 </p>
               </div>
@@ -501,12 +588,10 @@ export default function Home() {
 
       {/* ══════════════════════════════════════
           05 — PROJECTS
-          Desktop: horizontal scroll
-          Mobile: vertical card stack
       ══════════════════════════════════════ */}
       <div id="works" className="border-t border-gray-100">
 
-        {/* ── MOBILE: vertical stack ── */}
+        {/* Mobile: vertical stack */}
         <div className="md:hidden px-6 py-20">
           <Label className="block mb-4">Selected Works</Label>
           <h2
@@ -515,33 +600,30 @@ export default function Home() {
           >
             Works
           </h2>
-
           <div className="flex flex-col gap-0">
             {PROJECTS.map((p) => (
-              <div key={p.id} className="reveal-up group py-8 border-b border-gray-100 hover:border-gray-400 transition-colors duration-500">
+              <div
+                key={p.id}
+                className="reveal-up group py-8 border-b border-gray-100 hover:border-gray-400 transition-colors duration-500"
+              >
                 <div className="flex justify-between items-start mb-5">
                   <Label>{p.category}</Label>
                   <Label>{p.year}</Label>
                 </div>
-
-                {/* Image placeholder */}
                 <div className="w-full aspect-video bg-gray-50 border border-gray-100 relative overflow-hidden mb-5 flex items-center justify-center">
                   {p.img ? (
                     <Image src={p.img} alt={p.title} fill className="object-cover" />
                   ) : (
-                    <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
                       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white" />
-                      <div className="relative flex flex-col items-center gap-3">
-                        <div className="relative w-6 h-6">
-                          <div className="absolute inset-x-0 top-1/2 h-px bg-gray-200" />
-                          <div className="absolute inset-y-0 left-1/2 w-px bg-gray-200" />
-                        </div>
-                        <Label>{p.category}</Label>
+                      <div className="relative w-6 h-6">
+                        <div className="absolute inset-x-0 top-1/2 h-px bg-gray-200" />
+                        <div className="absolute inset-y-0 left-1/2 w-px bg-gray-200" />
                       </div>
+                      <Label>{p.category}</Label>
                     </div>
                   )}
                 </div>
-
                 <div className="flex justify-between items-end">
                   <div>
                     <h3
@@ -550,28 +632,38 @@ export default function Home() {
                     >
                       {p.title}
                     </h3>
-                    <p className="text-sm text-gray-500 italic mb-3" style={{ fontFamily: 'Playfair Display, serif' }}>
+                    <p
+                      className="text-sm text-gray-500 italic mb-3"
+                      style={{ fontFamily: 'Playfair Display, serif' }}
+                    >
                       {p.sub}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {p.tags.map((t) => (
-                        <span key={t} className="text-[8px] tracking-[0.3em] uppercase text-gray-400 border border-gray-100 px-2 py-1" style={{ fontFamily: 'DM Mono, monospace' }}>
+                        <span
+                          key={t}
+                          className="text-[8px] tracking-[0.3em] uppercase text-gray-500 border border-gray-200 px-2 py-1"
+                          style={{ fontFamily: 'DM Mono, monospace' }}
+                        >
                           {t}
                         </span>
                       ))}
                     </div>
                   </div>
-                  <span className="text-5xl font-light italic text-gray-100 leading-none" style={{ fontFamily: 'Playfair Display, serif' }}>
+                  <span
+                    className="text-5xl font-light italic text-gray-200 leading-none"
+                    style={{ fontFamily: 'Playfair Display, serif' }}
+                  >
                     {p.id}
                   </span>
                 </div>
               </div>
             ))}
-
             <div className="pt-10">
               <a
                 href="https://github.com/SandeshMahajan07"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
                 className="group inline-flex flex-col gap-2"
               >
                 <Label className="group-hover:text-black transition-colors">View all on GitHub</Label>
@@ -581,16 +673,18 @@ export default function Home() {
           </div>
         </div>
 
-        {/* ── DESKTOP: horizontal scroll ── */}
+        {/* Desktop: horizontal scroll */}
         <div className="projects-trigger relative bg-white hidden md:block">
           <div ref={horizontalRef} className="flex h-screen w-max">
 
             {/* Title panel */}
-            <div className="w-[45vw] h-screen flex flex-col justify-between px-[8%] py-16 flex-shrink-0 border-r border-gray-100">
+            <div className="w-[45vw] h-screen flex flex-col justify-between px-[8%] py-16 flex-shrink-0 border-r border-gray-100 relative overflow-hidden">
               <div className="flex justify-between">
                 <Label>Selected Works</Label>
-                <Label className="section-num">05 / 07</Label>
+                <Label>05 / 07</Label>
               </div>
+              {/* Screen illustration in title panel */}
+              <IllustrationScreen className="ill-float absolute bottom-20 right-8 w-44 h-28 text-gray-200 opacity-60 pointer-events-none" />
               <div>
                 <h2
                   className="text-[clamp(4rem,11vw,10rem)] font-black tracking-[-0.04em] uppercase leading-[0.88]"
@@ -598,24 +692,34 @@ export default function Home() {
                 >
                   Works
                 </h2>
-                <p className="mt-5 text-sm text-gray-500 italic max-w-xs leading-relaxed" style={{ fontFamily: 'Playfair Display, serif' }}>
+                <p
+                  className="mt-5 text-sm text-gray-500 italic max-w-xs leading-relaxed"
+                  style={{ fontFamily: 'Playfair Display, serif' }}
+                >
                   Scroll to explore selected projects.
                 </p>
               </div>
               <Label>{PROJECTS.length} Projects</Label>
             </div>
 
-            {/* Cards */}
+            {/* Project cards */}
             {PROJECTS.map((p) => (
-              <div key={p.id} className="w-[80vw] h-screen flex flex-col justify-between py-16 px-14 flex-shrink-0 border-r border-gray-100 group">
+              <div
+                key={p.id}
+                className="w-[80vw] h-screen flex flex-col justify-between py-16 px-14 flex-shrink-0 border-r border-gray-100 group"
+              >
                 <div className="flex justify-between">
                   <Label>{p.category}</Label>
                   <Label>{p.year}</Label>
                 </div>
-
                 <div className="flex-1 my-8 bg-gray-50 border border-gray-100 relative overflow-hidden flex items-center justify-center">
                   {p.img ? (
-                    <Image src={p.img} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-[1.5s]" />
+                    <Image
+                      src={p.img}
+                      alt={p.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-[1.5s]"
+                    />
                   ) : (
                     <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
                       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100" />
@@ -623,30 +727,45 @@ export default function Home() {
                         <div className="absolute inset-x-0 top-1/2 h-px bg-gray-200" />
                         <div className="absolute inset-y-0 left-1/2 w-px bg-gray-200" />
                       </div>
-                      <span className="relative text-[8px] tracking-[1em] uppercase text-gray-300 group-hover:tracking-[1.4em] transition-all duration-[1.2s]" style={{ fontFamily: 'DM Mono, monospace' }}>
+                      <span
+                        className="relative text-[8px] tracking-[1em] uppercase text-gray-400 group-hover:tracking-[1.4em] transition-all duration-[1.2s]"
+                        style={{ fontFamily: 'DM Mono, monospace' }}
+                      >
                         {p.category}
                       </span>
                     </div>
                   )}
                 </div>
-
                 <div className="flex justify-between items-end gap-8">
                   <div>
-                    <h3 className="text-[clamp(2rem,5vw,4.5rem)] font-black uppercase tracking-tight leading-none mb-3 group-hover:tracking-[-0.05em] transition-all duration-500" style={{ fontFamily: 'DM Sans, sans-serif' }}>
+                    <h3
+                      className="text-[clamp(2rem,5vw,4.5rem)] font-black uppercase tracking-tight leading-none mb-3 group-hover:tracking-[-0.05em] transition-all duration-500"
+                      style={{ fontFamily: 'DM Sans, sans-serif' }}
+                    >
                       {p.title}
                     </h3>
-                    <p className="text-xl text-gray-500 italic mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
+                    <p
+                      className="text-xl text-gray-500 italic mb-4"
+                      style={{ fontFamily: 'Playfair Display, serif' }}
+                    >
                       {p.sub}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {p.tags.map((t) => (
-                        <span key={t} className="text-[8px] tracking-[0.35em] uppercase text-gray-400 border border-gray-100 px-2.5 py-1 hover:border-gray-400 hover:text-gray-700 transition-colors" style={{ fontFamily: 'DM Mono, monospace' }}>
+                        <span
+                          key={t}
+                          className="text-[8px] tracking-[0.35em] uppercase text-gray-500 border border-gray-200 px-2.5 py-1 hover:border-gray-500 hover:text-gray-700 transition-colors"
+                          style={{ fontFamily: 'DM Mono, monospace' }}
+                        >
                           {t}
                         </span>
                       ))}
                     </div>
                   </div>
-                  <span className="text-[6rem] font-light italic text-gray-100 leading-none flex-shrink-0 group-hover:text-gray-200 transition-colors duration-500" style={{ fontFamily: 'Playfair Display, serif' }}>
+                  <span
+                    className="text-[6rem] font-light italic text-gray-100 leading-none flex-shrink-0 group-hover:text-gray-200 transition-colors duration-500"
+                    style={{ fontFamily: 'Playfair Display, serif' }}
+                  >
                     {p.id}
                   </span>
                 </div>
@@ -656,7 +775,12 @@ export default function Home() {
             {/* End panel */}
             <div className="w-[35vw] h-screen flex flex-col items-center justify-center gap-4 flex-shrink-0">
               <div className="w-px h-16 bg-gray-200" />
-              <a href="https://github.com/SandeshMahajan07" target="_blank" rel="noreferrer" className="group flex flex-col items-center gap-3">
+              <a
+                href="https://github.com/SandeshMahajan07"
+                target="_blank"
+                rel="noreferrer"
+                className="group flex flex-col items-center gap-3"
+              >
                 <Label className="group-hover:text-black transition-colors">View all on GitHub</Label>
                 <div className="w-0 group-hover:w-16 h-px bg-black transition-all duration-500" />
               </a>
@@ -670,11 +794,8 @@ export default function Home() {
       ══════════════════════════════════════ */}
       <section className="relative py-24 md:py-32 px-6 md:px-[8%] border-t border-gray-100 overflow-hidden">
 
-        {/* Blob */}
-        <Blob2 className="blob-float absolute top-10 -right-20 w-72 h-72 text-gray-50 opacity-50 pointer-events-none" />
-
         <div className="absolute top-8 right-6 md:right-12 hidden md:block">
-          <Label className="section-num">06 / 07</Label>
+          <Label>06 / 07</Label>
         </div>
 
         <div className="flex flex-col md:flex-row gap-12 md:gap-24 max-w-5xl">
@@ -687,17 +808,16 @@ export default function Home() {
               Credentials
             </h2>
           </div>
-
           <div className="flex-1">
             {CERTS.map(([name, issuer], i) => (
               <div
                 key={i}
-                className="reveal-up group flex justify-between items-baseline py-6 md:py-7 border-b border-gray-100 hover:border-gray-500 transition-colors duration-400 last:border-b-0"
+                className="reveal-up group flex justify-between items-baseline py-6 md:py-7 border-b border-gray-100 hover:border-gray-500 transition-colors duration-300 last:border-b-0"
               >
                 <div className="flex items-baseline gap-3 md:gap-4">
-                  <Label className="tabular-nums flex-shrink-0">{String(i+1).padStart(2,'0')}</Label>
+                  <Label className="tabular-nums flex-shrink-0">{String(i + 1).padStart(2, '0')}</Label>
                   <span
-                    className="text-sm font-medium text-black group-hover:translate-x-1 transition-transform duration-400 inline-block"
+                    className="text-sm font-medium text-black group-hover:translate-x-1 transition-transform duration-300 inline-block"
                     style={{ fontFamily: 'DM Sans, sans-serif' }}
                   >
                     {name}
@@ -715,19 +835,18 @@ export default function Home() {
       ══════════════════════════════════════ */}
       <section id="contact" className="relative min-h-screen flex flex-col border-t border-gray-100 overflow-hidden">
 
-        {/* Blobs */}
-        <Blob1 className="blob-float absolute -top-20 -left-20 w-80 h-80 text-gray-50 opacity-60 pointer-events-none" />
-        <Blob3 className="blob-float absolute bottom-20 -right-16 w-72 h-72 text-gray-50 opacity-50 pointer-events-none" />
+        {/* Envelope illustration — top right */}
+        <IllustrationConnect className="ill-float absolute top-16 right-[6%] w-40 h-26 text-gray-200 opacity-70 pointer-events-none hidden md:block" />
 
         <div className="absolute top-8 right-6 md:right-12 hidden md:block">
-          <Label className="section-num">07 / 07</Label>
+          <Label>07 / 07</Label>
         </div>
 
         {/* Big type */}
         <div className="flex-1 flex flex-col items-center justify-center px-6 text-center pt-20 pb-4">
           <div className="overflow-hidden">
             <h2
-              className="reveal-up text-[clamp(4.5rem,16vw,15rem)] font-black tracking-[-0.05em] uppercase leading-[0.88] text-black"
+              className="reveal-up text-[clamp(3.5rem,11vw,10rem)] font-black tracking-[-0.03em] uppercase leading-[0.9]"
               style={{ fontFamily: 'DM Sans, sans-serif' }}
             >
               Let's
@@ -735,7 +854,7 @@ export default function Home() {
           </div>
           <div className="overflow-hidden">
             <h2
-              className="reveal-up text-[clamp(4.5rem,16vw,15rem)] tracking-[-0.05em] uppercase leading-[0.88] text-gray-100 italic"
+              className="reveal-up text-[clamp(3.5rem,11vw,10rem)] tracking-[-0.03em] uppercase leading-[0.9] text-gray-400 italic"
               style={{ fontFamily: 'Playfair Display, serif', fontWeight: 400 }}
             >
               connect
@@ -759,10 +878,32 @@ export default function Home() {
 
             <div className="reveal-up flex flex-col gap-4">
               <Label>Elsewhere</Label>
-              <div className="flex gap-6 md:gap-8 text-[10px] font-bold uppercase tracking-[0.4em] text-gray-500 flex-wrap" style={{ fontFamily: 'DM Mono, monospace' }}>
-                <a href="https://linkedin.com/in/sandesh-mahajan-97a233281" target="_blank" rel="noreferrer" className="hover:text-black transition-colors border-b border-transparent hover:border-black pb-0.5">LinkedIn</a>
-                <a href="https://github.com/SandeshMahajan07" target="_blank" rel="noreferrer" className="hover:text-black transition-colors border-b border-transparent hover:border-black pb-0.5">GitHub</a>
-                <a href="tel:+916360911344" className="hover:text-black transition-colors border-b border-transparent hover:border-black pb-0.5">+91 6360 911 344</a>
+              <div
+                className="flex gap-6 md:gap-8 text-[10px] font-bold uppercase tracking-[0.4em] text-gray-500 flex-wrap"
+                style={{ fontFamily: 'DM Mono, monospace' }}
+              >
+                <a
+                  href="https://linkedin.com/in/sandesh-mahajan-97a233281"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-black transition-colors border-b border-transparent hover:border-black pb-0.5"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href="https://github.com/SandeshMahajan07"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-black transition-colors border-b border-transparent hover:border-black pb-0.5"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="tel:+916360911344"
+                  className="hover:text-black transition-colors border-b border-transparent hover:border-black pb-0.5"
+                >
+                  +91 6360 911 344
+                </a>
               </div>
             </div>
 
@@ -770,7 +911,10 @@ export default function Home() {
               <Label>Status</Label>
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                <span className="text-xs font-bold uppercase tracking-widest text-green-600" style={{ fontFamily: 'DM Mono, monospace' }}>
+                <span
+                  className="text-xs font-bold uppercase tracking-widest text-green-600"
+                  style={{ fontFamily: 'DM Mono, monospace' }}
+                >
                   Available for Internships
                 </span>
               </div>
@@ -780,8 +924,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="py-8 md:py-10 px-6 md:px-[8%] border-t border-gray-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 flex-wrap" style={{ fontFamily: 'DM Mono, monospace' }}>
+      {/* Footer */}
+      <footer
+        className="py-8 md:py-10 px-6 md:px-[8%] border-t border-gray-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 flex-wrap"
+        style={{ fontFamily: 'DM Mono, monospace' }}
+      >
         <Label>&copy; 2025 Sandesh Mahajan</Label>
         <Label>Intentionally Crafted</Label>
         <Label>Kalaburagi · Karnataka · IN</Label>
