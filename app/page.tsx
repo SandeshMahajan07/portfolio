@@ -70,7 +70,7 @@ const CERTS = [
 function Label({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   return (
     <span
-      className={`text-[9px] tracking-[0.5em] uppercase text-gray-300 ${className}`}
+      className={`text-[9px] tracking-[0.5em] uppercase text-gray-500 ${className}`}
       style={{ fontFamily: 'DM Mono, monospace' }}
     >
       {children}
@@ -430,7 +430,7 @@ export default function Home() {
               <div key={i} className="reveal-up group py-8 border-b border-gray-100 hover:border-gray-400 transition-colors duration-500 flex flex-col md:flex-row md:items-baseline md:gap-12">
                 <Label className="flex-shrink-0 md:w-24 mb-2 md:mb-0">{s.label}</Label>
                 <p
-                  className="text-sm text-gray-600 tracking-wide leading-relaxed group-hover:text-black transition-colors duration-500"
+                  className="text-sm text-gray-700 tracking-wide leading-relaxed group-hover:text-black transition-colors duration-500"
                   style={{ fontFamily: 'DM Sans, sans-serif' }}
                 >
                   {s.value}
@@ -481,7 +481,7 @@ export default function Home() {
                   <Label>{e.location}</Label>
                 </div>
                 <p
-                  className="text-sm text-gray-400 leading-[1.85] max-w-xl"
+                  className="text-sm text-gray-600 leading-[1.85] max-w-xl"
                   style={{ fontFamily: 'DM Sans, sans-serif' }}
                 >
                   {e.desc}
